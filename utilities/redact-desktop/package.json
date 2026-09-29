@@ -1,0 +1,45 @@
+{
+  "name": "arma-workspace",
+  "version": "0.2.2",
+  "description": "A local workspace for Claude Code, with Codex for development testing",
+  "private": true,
+  "license": "MIT",
+  "main": "main.cjs",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "start": "node scripts/start.cjs",
+    "build:win": "node scripts/build-windows.cjs",
+    "verify:win": "node scripts/verify-windows.cjs",
+    "test": "node --test tests/*.test.cjs",
+    "test:smoke": "node tests/smoke.electron.cjs && node tests/smoke.auth.electron.cjs && node tests/smoke.sessions.electron.cjs && node tests/smoke.files.electron.cjs && node tests/smoke.documents.electron.cjs && node tests/smoke.redaction.electron.cjs && node tests/smoke.database.electron.cjs && node tests/smoke.patient-summaries.electron.cjs && node tests/smoke.unredaction.electron.cjs",
+    "build:mac": "node scripts/build-mac.cjs",
+    "verify:mac": "node scripts/verify-mac.cjs",
+    "build:mac:intel": "node scripts/build-mac.cjs --x64",
+    "build:mac:all": "npm run build:mac && npm run build:mac:intel"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-code": "2.1.280",
+    "@xmldom/xmldom": "0.9.12",
+    "exceljs": "4.4.0",
+    "jszip": "3.10.1",
+    "pdfjs-dist": "6.3.289",
+    "saxes": "5.0.1",
+    "sql.js": "1.14.2",
+    "ssf": "0.11.2",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz",
+    "yauzl": "3.4.0"
+  },
+  "devDependencies": {
+    "@openai/codex": "0.156.1",
+    "@playwright/test": "1.63.0",
+    "electron": "44.4.5",
+    "electron-builder": "26.15.3"
+  },
+  "overrides": {
+    "exceljs": {
+      "uuid": "11.1.1"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+ARMa - Windows test build
+
+Requires 64-bit Windows 10 version 1809 or newer, or Windows 11.
+The installer includes Electron, the application, Claude Code and code references.
+Node.js, npm, Python, Docker and a separate Claude installation are not needed.
+An internet connection and a Claude account with Claude Code access are needed
+for model requests. Word or a compatible viewer is needed to open report DOCX files.
+Windows uses software rendering automatically; shortcut flags are not required.
+
+1. Run the ARMa setup EXE. It installs for your Windows user without admin access.
+2. Open ARMa from Start or the desktop. Click "Sign in to Claude" in Connections.
+3. Complete sign-in in your browser. ARMa updates to "Signed in" automatically.
+   If your browser gives you a code, use "Use a sign-in code" in Connections.
+4. Create a workspace outside the installation folder, for example in Documents.
+5. Check import, preview, Redact, Database, Patient Summaries and Unredact Summaries.
+   Check Stop and restart recovery, and compare report totals with the source.
+
+This is an unsigned test installer. Windows may display an unknown-publisher or
+SmartScreen warning. Verify that it is the build you received from the developer.
+
+Local original files and identity mappings belong in unredacted/. Moving a file
+to redacted/ makes it available to Claude; that move does not itself redact it.
+Review redaction locally before moving any real document to redacted/.
+Use separate workspaces for each client and supplier. Do not paste patient details
+into chat. Workbook comments, drawings, metadata and literal formula text are not
+covered by cell redaction rules. PDF redaction is not included.
+
+The bundled reference descriptions cover April 2025 through September 2026.
+Sign-in uses Claude's own local credential storage. No account credentials are
+included in the installer. Codex is not included or enabled in this build.
+
+Uninstall from Windows Settings > Apps. Your selected workspace folders and saved
+ARMa conversations are retained. Automatic updates are not included.
+Report failures with the action, error text and app version; omit patient data.

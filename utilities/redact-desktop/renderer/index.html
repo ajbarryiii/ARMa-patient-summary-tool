@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self' blob:; worker-src 'self' blob:; connect-src 'self'; base-uri 'none'; form-action 'none'"
+    />
+    <title>ARMa</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="document-viewers.css" />
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside id="sidebar" class="sidebar" aria-label="Workspace sidebar">
+        <div class="brand-bar">
+          <span class="brand">ARMa<span class="brand-dot"></span></span
+          ><div class="icon-group">
+          <button id="sidebar-view" class="icon-button" title="Show sessions" aria-label="Show sessions" aria-controls="files-panel sessions-panel" data-icon="chat"></button>
+          <button
+            id="connections"
+            class="icon-button"
+            title="Agent connections"
+            aria-label="Agent connections"
+            data-icon="sliders"
+          ></button>
+          <button id="collapse-sidebar" class="icon-button" title="Hide sidebar" aria-label="Hide sidebar" aria-controls="sidebar" aria-expanded="true" data-icon="panel"></button>
+          </div>
+        </div>
+        <div class="workspace-actions">
+          <button id="open-workspace" class="secondary">
+            <span data-icon="folder"></span>Open folder</button
+          ><button
+            id="create-workspace"
+            class="icon-button bordered"
+            title="New workspace"
+            aria-label="New workspace"
+            data-icon="plus"
+          ></button>
+        </div>
+        <div id="files-panel" class="sidebar-panel">
+        <div class="sidebar-heading">
+          <span>Files</span>
+          <div class="icon-group">
+            <button
+              id="add-files"
+              class="icon-button"
+              title="Add files to selected folder"
+              aria-label="Add files"
+              data-icon="upload"
+              disabled
+            ></button
+            ><button
+              id="refresh-files"
+              class="icon-button"
+              title="Refresh files"
+              aria-label="Refresh files"
+              data-icon="refresh"
+              disabled
+            ></button>
+          </div>
+        </div>
+        <div id="tree" class="tree" role="tree" aria-label="Workspace files">
+          <div class="sidebar-empty">No workspace open</div>
+        </div>
+        </div>
+        <div id="sessions-panel" class="sidebar-panel" hidden>
+          <div class="sidebar-heading">
+            <span>Sessions</span>
+            <button id="new-session" class="icon-button" title="New session" aria-label="New session" data-icon="compose" disabled></button>
+          </div>
+          <nav id="session-list" class="session-list" aria-label="Workspace sessions"></nav>
+        </div>
+        <div id="recents" class="recents" hidden>
+          <div class="sidebar-heading">Recent workspaces</div>
+          <div id="recent-list"></div>
+        </div>
+        <div class="sidebar-footer">
+          <span class="local-indicator"></span><span>Local workspace</span
+          ><button
+            id="reveal-workspace"
+            class="icon-button"
+            title="Reveal workspace in Finder"
+            aria-label="Reveal workspace"
+            data-icon="external"
+            disabled
+          ></button>
+        </div>
+      </aside>
+      <main class="main">
+        <header class="topbar">
+          <button id="expand-sidebar" class="icon-button" title="Show sidebar" aria-label="Show sidebar" aria-controls="sidebar" aria-expanded="false" data-icon="panel" hidden></button>
+          <div class="breadcrumb">
+            <span data-icon="folder"></span
+            ><span id="workspace-name">Workspace</span
+            ><span class="separator">/</span
+            ><span id="conversation-name">New session</span>
+          </div>
+          <button
+            id="new-conversation"
+            class="icon-button"
+            title="New session"
+            aria-label="New session"
+            data-icon="compose"
+            disabled
+          ></button>
+        </header>
+        <div class="work-area">
+          <section class="conversation" aria-label="Agent conversation">
+            <div id="welcome" class="welcome">
+              <div class="welcome-mark">a<span>.</span></div>
+              <h1>Open a workspace</h1>
+              <div class="welcome-actions">
+                <button id="welcome-open" class="primary">
+                  <span data-icon="folder"></span>Open folder</button
+                ><button id="welcome-create" class="secondary">
+                  <span data-icon="plus"></span>New workspace
+                </button>
+              </div>
+            </div>
+            <div id="chat-empty" class="chat-empty" hidden>
+              <span class="agent-mark" data-icon="spark"></span>
+              <h1>Start a conversation</h1>
+            </div>
+            <div
+              id="messages"
+              class="messages"
+              role="log"
+              aria-label="Conversation messages"
+            ></div>
+            <div class="composer-area">
+              <div
+                id="redaction-results"
+                class="redaction-results"
+                aria-label="Local redaction results"
+                hidden
+              ></div>
+              <div id="activity" class="activity" aria-live="polite"></div>
+              <form id="composer" class="composer">
+                <div
+                  id="redaction-source"
+                  class="redaction-source"
+                  hidden
+                ></div>
+                <div
+                  id="source-suggestions"
+                  class="source-suggestions"
+                  role="listbox"
+                  aria-label="Files to redact"
+                  hidden
+                ></div>
+                <textarea
+                  id="prompt"
+                  rows="2"
+                  placeholder="Open a workspace to begin"
+                  aria-label="Message the agent"
+                  disabled
+                ></textarea>
+                <div class="composer-toolbar">
+                  <div class="skill-controls">
+                    <button
+                      id="redact-skill"
+                      class="skill-button"
+                      type="button"
+                      aria-pressed="false"
+                      title="Load redaction skill"
+                    >
+                      Redact
+                    </button>
+                    <button
+                      id="redact-choose"
+                      class="skill-button"
+                      type="button"
+                      hidden
+                    >
+                      Choose file
+                    </button>
+                    <button id="database-skill" class="skill-button" type="button" aria-pressed="false" title="Convert a redacted report to SQLite">Database</button>
+                    <button id="patient-summaries-skill" class="skill-button" type="button" aria-pressed="false" title="Create patient Word summaries from SQLite">Patient Summaries</button>
+                    <button id="unredact-skill" class="skill-button" type="button" aria-pressed="false" title="Restore identities in patient Word summaries locally">Unredact Summaries</button>
+                    <button id="unredact-mappings" class="skill-button" type="button" title="Choose mapping CSVs" aria-label="Choose mapping CSVs" hidden>⇄</button>
+                  </div>
+                  <div class="model-controls">
+                    <select id="model" aria-label="Model" title="Model" disabled>
+                      <option value="claude:">Claude default</option>
+                    </select>
+                    <span class="model-divider" aria-hidden="true"></span>
+                    <select id="effort" aria-label="Reasoning effort" title="Reasoning effort" disabled>
+                      <option value="">Automatic</option>
+                    </select>
+                    <span
+                      id="provider-state"
+                      class="provider-dot"
+                      title="Checking CLI"
+                    ></span>
+                  </div>
+                  <div class="composer-send">
+                    <button id="edit-prompt" class="icon-button" type="button" aria-label="Edit text" aria-haspopup="menu" title="Edit text" data-icon="more" disabled></button>
+                    <span class="shortcut">↵</span
+                    ><button
+                      id="send"
+                      class="send-button"
+                      type="submit"
+                      title="Send message"
+                      aria-label="Send message"
+                      data-icon="arrowUp"
+                      disabled
+                    ></button
+                    ><button
+                      id="stop"
+                      class="send-button stop"
+                      type="button"
+                      title="Stop response"
+                      aria-label="Stop response"
+                      data-icon="stop"
+                      hidden
+                    ></button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </section>
+          <aside id="preview" class="preview" aria-label="File preview" hidden>
+            <div class="preview-header">
+              <span id="preview-name"></span>
+              <div class="icon-group">
+                <button
+                  id="expand-preview"
+                  class="icon-button"
+                  title="Expand preview"
+                  aria-label="Expand preview"
+                >
+                  ⤢
+                </button>
+                <button
+                  id="reveal-file"
+                  class="icon-button"
+                  title="Reveal file in Finder"
+                  aria-label="Reveal file"
+                  data-icon="external"
+                ></button
+                ><button
+                  id="close-preview"
+                  class="icon-button"
+                  title="Close preview"
+                  aria-label="Close preview"
+                  data-icon="close"
+                ></button>
+              </div>
+            </div>
+            <div id="preview-content" class="preview-content"></div>
+            <div id="preview-meta" class="preview-meta"></div>
+          </aside>
+        </div>
+        <footer class="statusbar">
+          <span id="workspace-path">No workspace selected</span>
+          <div class="file-progress">
+            <span id="file-status"></span
+            ><button id="cancel-import" hidden>Cancel import</button>
+          </div>
+        </footer>
+      </main>
+    </div>
+    <div id="toast" class="toast" role="status" hidden></div>
+    <dialog id="file-dialog" aria-labelledby="file-dialog-title">
+      <form method="dialog">
+        <div class="dialog-heading">
+          <h2 id="file-dialog-title">Rename item</h2>
+          <button id="file-name-cancel" class="icon-button" type="button" aria-label="Cancel" data-icon="close"></button>
+        </div>
+        <input id="file-name-input" aria-label="Name" required autocomplete="off" />
+        <div class="file-dialog-actions"><button id="file-name-submit" class="primary" value="save">Rename</button></div>
+      </form>
+    </dialog>
+    <dialog id="connections-dialog">
+      <div class="dialog-heading">
+        <h2>Agent connections</h2>
+        <button
+          id="close-connections"
+          class="icon-button"
+          aria-label="Close connections"
+          data-icon="close"
+        ></button>
+      </div>
+      <div id="connection-list"></div>
+      <button id="refresh-connections" class="secondary">
+        <span data-icon="refresh"></span>Refresh connections
+      </button>
+    </dialog>
+  </body>
+</html>

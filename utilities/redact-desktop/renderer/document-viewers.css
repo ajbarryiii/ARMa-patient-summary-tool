@@ -1,0 +1,274 @@
+.preview.expanded {
+  width: 100%;
+  max-width: none;
+}
+.work-area:has(.preview.expanded:not([hidden])) > .conversation {
+  display: none;
+}
+.preview-content.document {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+}
+.spreadsheet-viewer,
+.pdf-viewer {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  width: 100%;
+}
+.viewer-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 9px;
+  min-height: 39px;
+  border-bottom: 1px solid #34343e;
+  flex-wrap: wrap;
+}
+.viewer-button {
+  padding: 4px 8px;
+  border: 1px solid #3b3b45;
+  border-radius: 4px;
+  min-height: 25px;
+  font-size: 11px;
+}
+.viewer-button.active {
+  background: #414a64;
+}
+.viewer-select {
+  border: 1px solid #42424e;
+  border-radius: 4px;
+  background: #24242b;
+  font-size: 11px;
+  padding: 4px;
+}
+.sheet-location,
+.sheet-formula,
+.pdf-page-input {
+  color: #dfdfe9;
+  background: #202025;
+  border: 1px solid #3b3b45;
+  border-radius: 4px;
+  padding: 5px 7px;
+  min-width: 0;
+  font:
+    11px ui-monospace,
+    SFMono-Regular,
+    monospace;
+}
+.sheet-location {
+  width: 64px;
+  text-transform: uppercase;
+}
+.sheet-formula {
+  flex: 1;
+  width: 70px;
+}
+.sheet-range {
+  flex: 1;
+  font-size: 10px;
+  color: #a6a6b4;
+  white-space: nowrap;
+}
+.sheet-navigation {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  min-height: 33px;
+}
+.sheet-viewport {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  background: #dedee2;
+  color-scheme: light;
+}
+.sheet-surface {
+  position: relative;
+  width: max-content;
+  min-width: 100%;
+  min-height: 100%;
+  background: #fff;
+}
+.sheet-grid {
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #fff;
+  color: #000;
+  font:
+    11pt Calibri,
+    Arial,
+    sans-serif;
+}
+.sheet-grid th {
+  background: #f0f2f4;
+  color: #626975;
+  border-right: 1px solid #ccd0d6;
+  border-bottom: 1px solid #ccd0d6;
+  font:
+    10px/1.1 -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  padding: 0 4px;
+  user-select: none;
+}
+.sheet-grid thead th {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  height: 24px;
+}
+.sheet-grid .sheet-row-number {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  width: 44px;
+  text-align: center;
+}
+.sheet-grid .sheet-corner {
+  left: 0;
+  z-index: 4;
+}
+.sheet-cell {
+  position: relative;
+  padding: 0 4px;
+  overflow: hidden;
+  border-right: 1px solid #e2e5e9;
+  border-bottom: 1px solid #e2e5e9;
+  vertical-align: bottom;
+  line-height: 1.15;
+  cursor: cell;
+}
+.no-gridlines .sheet-cell {
+  border-color: transparent;
+}
+.sheet-cell-content {
+  overflow: hidden;
+  min-height: 15px;
+  overflow-wrap: normal;
+}
+.sheet-cell.selected {
+  outline: 2px solid #397557;
+  outline-offset: -2px;
+}
+.sheet-image {
+  position: absolute;
+  max-width: none !important;
+  pointer-events: none;
+}
+.sheet-tabs {
+  display: flex;
+  gap: 1px;
+  overflow-x: auto;
+  border-top: 1px solid #3a3a44;
+  padding: 5px 7px;
+  background: #222227;
+  flex-shrink: 0;
+}
+.sheet-tabs .viewer-button {
+  border: 0;
+  border-radius: 3px;
+  flex-shrink: 0;
+  max-width: 240px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sheet-tabs [aria-selected="true"] {
+  background: #3b4359;
+  color: #dde5ff;
+}
+.viewer-notes {
+  padding: 7px 11px;
+  color: #9d9daa;
+  border-top: 1px solid #34343e;
+  font-size: 10px;
+  max-height: 130px;
+  overflow: auto;
+}
+.viewer-notes summary {
+  cursor: pointer;
+}
+.viewer-notes p {
+  margin: 8px 0 0;
+  line-height: 1.5;
+}
+.pdf-stage {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  scrollbar-gutter: stable;
+  padding: 16px;
+  background: #34343b;
+}
+.pdf-paper {
+  position: relative;
+  margin: 0 auto;
+  background: white;
+  box-shadow: 0 2px 12px #0005;
+  overflow: hidden;
+}
+.pdf-paper canvas {
+  display: block;
+  max-width: none;
+}
+.pdf-page-input {
+  width: 50px;
+}
+.pdf-page-count {
+  color: #aaaab7;
+  font-size: 11px;
+  margin-right: 4px;
+}
+.pdf-viewer .viewer-select {
+  margin-left: auto;
+}
+.viewer-message {
+  padding: 25px;
+  color: #ababbb;
+  font-size: 12px;
+  line-height: 1.7;
+}
+/* PDF.js supplies only selectable text geometry, never PDF scripts or links. */
+.textLayer {
+  position: absolute;
+  inset: 0;
+  overflow: clip;
+  text-align: initial;
+  opacity: 1;
+  line-height: 1;
+  text-size-adjust: none;
+  forced-color-adjust: none;
+  transform-origin: 0 0;
+  caret-color: CanvasText;
+  z-index: 2;
+}
+.textLayer :is(span, br) {
+  color: transparent;
+  position: absolute;
+  white-space: pre;
+  cursor: text;
+  transform-origin: 0 0;
+}
+.textLayer > :not(.markedContent),
+.textLayer .markedContent span:not(.markedContent) {
+  z-index: 1;
+  --font-height: 0;
+  --scale-x: 1;
+  --rotate: 0deg;
+  font-size: calc(var(--text-scale-factor) * var(--font-height));
+  transform: rotate(var(--rotate)) scaleX(var(--scale-x))
+    scale(var(--min-font-size-inv));
+}
+.textLayer .markedContent {
+  display: contents;
+}
+.textLayer ::selection {
+  background: #526dc366;
+}
+
+.textLayer {
+  --min-font-size: 1;
+  --text-scale-factor: calc(var(--total-scale-factor) * var(--min-font-size));
+  --min-font-size-inv: calc(1 / var(--min-font-size));
+}

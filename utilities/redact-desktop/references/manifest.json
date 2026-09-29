@@ -1,0 +1,226 @@
+{
+  "coverage_start": "2025-04-01",
+  "coverage_end": "2026-09-30",
+  "sha256": "b7507915538e81d1a39fccf94dc62afe3029eefa7f22ef7f9c9c0897649756ff",
+  "sources": [
+    {
+      "id": "RVU25B",
+      "kind": "pfs",
+      "effective_start": "2025-04-01",
+      "title": "RVU25B - Updated 06/05/2025",
+      "url": "https://www.cms.gov/files/zip/rvu25b-updated-06/05/2025.zip",
+      "landing_url": "https://www.cms.gov/medicare/payment/fee-schedules/physician/pfs-relative-value-files/rvu25b",
+      "sha256": "2fbe521eb8837073f2cfcefeb4af997d2141e4577cd2040bfec83bf52c2063ef",
+      "data_file": "PPRRVU25_APR.csv"
+    },
+    {
+      "id": "RVU25C",
+      "kind": "pfs",
+      "effective_start": "2025-07-01",
+      "title": "RVU25C - Updated 06/05/2025",
+      "url": "https://www.cms.gov/files/zip/rvu25c-updated-06/05/2025.zip",
+      "landing_url": "https://www.cms.gov/medicare/payment/fee-schedules/physician/pfs-relative-value-files/rvu25c",
+      "sha256": "ab795bffde2b239fd33cf0267754ee4bc397a2ba29a57e7779b7fe42f09f4039",
+      "data_file": "PPRRVU2025_Jul.csv"
+    },
+    {
+      "id": "RVU25D",
+      "kind": "pfs",
+      "effective_start": "2025-10-01",
+      "title": "RVU25D - Updated 09/11/2025",
+      "url": "https://www.cms.gov/files/zip/rvu25d-updated-09/11/2025.zip",
+      "landing_url": "https://www.cms.gov/medicare/payment/fee-schedules/physician/pfs-relative-value-files/rvu25d-0",
+      "sha256": "ebe658d447353094aaf2068530045079b6875f76451defd163fe701b0c2adf79",
+      "data_file": "PPRRVU2025_Oct.csv"
+    },
+    {
+      "id": "RVU26A",
+      "kind": "pfs",
+      "effective_start": "2026-01-01",
+      "title": "RVU26A - Updated 12/29/2025",
+      "url": "https://www.cms.gov/files/zip/rvu26a-updated-12-29-2025.zip",
+      "landing_url": "https://www.cms.gov/medicare/payment/fee-schedules/physician/pfs-relative-value-files/rvu26a",
+      "sha256": "91b9bdd5459bc4c19d4f8203410b29a672db37def2e70f01ef627b8b18fc7482",
+      "data_file": "PPRRVU2026_Jan_nonQPP.csv"
+    },
+    {
+      "id": "RVU26B",
+      "kind": "pfs",
+      "effective_start": "2026-04-01",
+      "title": "RVU26B - Updated 05/01/2026",
+      "url": "https://www.cms.gov/files/zip/rvu26b-updated-05-01-2026.zip",
+      "landing_url": "https://www.cms.gov/medicare/payment/fee-schedules/physician/pfs-relative-value-files/rvu26b",
+      "sha256": "7d9a398769fc4da406aa99284f3ab1a56eb609696fcf2f6f166387574edd5728",
+      "data_file": "PPRRVU2026_Apr_nonQPP.csv"
+    },
+    {
+      "id": "RVU26C",
+      "kind": "pfs",
+      "effective_start": "2026-07-01",
+      "title": "RVU26C - Updated 06/30/2026",
+      "url": "https://www.cms.gov/files/zip/rvu26c-updated-06-30-2026.zip",
+      "landing_url": "https://www.cms.gov/medicare/payment/fee-schedules/physician/pfs-relative-value-files/rvu26c",
+      "sha256": "d45a158e02694c1539e7f88192c611883e377181eda86dc213359707bcacbacb",
+      "data_file": "PPRRVU2026_Jul_nonQPP.csv"
+    },
+    {
+      "id": "HCPCS-2026-07-01",
+      "kind": "hcpcs",
+      "effective_start": "2026-07-01",
+      "title": "July 2026 Alpha-Numeric HCPCS File (ZIP)",
+      "url": "https://www.cms.gov/files/zip/july-2026-alpha-numeric-hcpcs-file.zip",
+      "landing_url": "https://www.cms.gov/medicare/coding-billing/healthcare-common-procedure-system/quarterly-update",
+      "sha256": "5591fed257e4d2307c1d2dc9c66abc8e346b1f4c076e9e48559799e2de14b70a",
+      "data_file": "HCPC2026_JUL_ANWEB_06172026.txt"
+    },
+    {
+      "id": "HCPCS-2026-04-01",
+      "kind": "hcpcs",
+      "effective_start": "2026-04-01",
+      "title": "April 2026 Alpha-Numeric HCPCS File  (ZIP)",
+      "url": "https://www.cms.gov/files/zip/april-2026-alpha-numeric-hcpcs-file.zip",
+      "landing_url": "https://www.cms.gov/medicare/coding-billing/healthcare-common-procedure-system/quarterly-update",
+      "sha256": "c4c2d3d22507a498520e80ce292449fb80e4521f8735d40091729d127ac18421",
+      "data_file": "HCPC2026_APR_ANWEB.txt"
+    },
+    {
+      "id": "HCPCS-2026-01-01",
+      "kind": "hcpcs",
+      "effective_start": "2026-01-01",
+      "title": "January 2026 Alpha-Numeric HCPCS File (ZIP)",
+      "url": "https://www.cms.gov/files/zip/january-2026-alpha-numeric-hcpcs-file.zip",
+      "landing_url": "https://www.cms.gov/medicare/coding-billing/healthcare-common-procedure-system/quarterly-update",
+      "sha256": "8f4a26de1eca89205be02fbe48cc899c6c5930cf5d4f6b8c5a227f64450157b0",
+      "data_file": "HCPC2026_JAN_ANWEB_01122026.txt"
+    },
+    {
+      "id": "HCPCS-2025-10-01",
+      "kind": "hcpcs",
+      "effective_start": "2025-10-01",
+      "title": "October 2025 Alpha-Numeric HCPCS File  (ZIP)",
+      "url": "https://www.cms.gov/files/zip/october-2025-alpha-numeric-hcpcs-file.zip",
+      "landing_url": "https://www.cms.gov/medicare/coding-billing/healthcare-common-procedure-system/quarterly-update",
+      "sha256": "7fd2c5752e2551960e98acf62d60d789a97796e0cf0f962bd03645088be4be5f",
+      "data_file": "HCPC2025_OCT_ANWEB_v4.txt"
+    },
+    {
+      "id": "HCPCS-2025-07-01",
+      "kind": "hcpcs",
+      "effective_start": "2025-07-01",
+      "title": "July 2025 Alpha-Numeric HCPCS File (ZIP)",
+      "url": "https://www.cms.gov/files/zip/july-2025-alpha-numeric-hcpcs-file.zip",
+      "landing_url": "https://www.cms.gov/medicare/coding-billing/healthcare-common-procedure-system/quarterly-update",
+      "sha256": "91a9e95e06815fcf5e35b7aaf8f4fe9b1a9aa7df556425bb8aa7f99910df19b3",
+      "data_file": "HCPC2025_JUL_ANWEB_v3.txt"
+    },
+    {
+      "id": "HCPCS-2025-04-01",
+      "kind": "hcpcs",
+      "effective_start": "2025-04-01",
+      "title": "April 2025 Alpha-Numeric HCPCS File  (ZIP)",
+      "url": "https://www.cms.gov/files/zip/april-2025-alpha-numeric-hcpcs-file.zip",
+      "landing_url": "https://www.cms.gov/medicare/coding-billing/healthcare-common-procedure-system/quarterly-update",
+      "sha256": "7d4a7c64d0d0ac3d71d41aa00cd252e24f0347ceccb948db9556ce166b27857b",
+      "data_file": "HCPC2025_APR_ANWEB.txt"
+    },
+    {
+      "id": "ICD10CM-2026-04-01",
+      "kind": "icd",
+      "effective_start": "2026-04-01",
+      "title": "April 1, 2026 Code Descriptions in Tabular Order (ZIP)",
+      "url": "https://www.cms.gov/files/zip/april-1-2026-code-descriptions-tabular-order.zip",
+      "landing_url": "https://www.cms.gov/medicare/coding-billing/ICD-10-codes",
+      "sha256": "4fd9d8b37f02ab42827c7e7be30595c005b0cc3a6bae7a515e3f4c86b6918688",
+      "data_file": "Code Descriptions/icd10cm_order_2026.txt"
+    },
+    {
+      "id": "ICD10CM-2025-10-01",
+      "kind": "icd",
+      "effective_start": "2025-10-01",
+      "title": "2026 Code Descriptions in Tabular Order (ZIP)",
+      "url": "https://www.cms.gov/files/zip/2026-code-descriptions-tabular-order.zip",
+      "landing_url": "https://www.cms.gov/medicare/coding-billing/ICD-10-codes",
+      "sha256": "55a9124a27ca78a4a5c41e1101eda064ec2e08d105ff9e78d1fbd1a83298ef11",
+      "data_file": "icd10cm_order_2026.txt"
+    },
+    {
+      "id": "ICD10CM-2025-04-01",
+      "kind": "icd",
+      "effective_start": "2025-04-01",
+      "title": "2025 Code Descriptions in Tabular Order (ZIP)",
+      "url": "https://www.cms.gov/files/zip/2025-code-descriptions-tabular-order-april.zip",
+      "landing_url": "https://www.cms.gov/medicare/coding-billing/ICD-10-codes",
+      "sha256": "82291c7e21ac175574ea79413dc9e777e84d0bc4c92c08f6c3a2b3827d7384dc",
+      "data_file": "Code Descriptions/icd10cm_order_2025.txt"
+    },
+    {
+      "id": "CMS-revenue",
+      "kind": "revenue",
+      "effective_start": null,
+      "title": "CMS Blue Button Claim Revenue Center Code",
+      "url": "https://bluebutton.cms.gov/fhir/CodeSystem/CLM-REV-CNTR-CD/",
+      "landing_url": "https://bluebutton.cms.gov/fhir/CodeSystem/CLM-REV-CNTR-CD/",
+      "sha256": "deca63c929b0a7057be2573fd2ac7ecae8ba25e8b303a5d962dae9099eca96f3"
+    },
+    {
+      "id": "26CLABQ3",
+      "kind": "clfs",
+      "effective_start": "2026-07-01",
+      "title": "Medicare Clinical Laboratory Fee Schedule 26CLABQ3",
+      "url": "https://www.cms.gov/files/zip/26clabq3.zip",
+      "landing_url": "https://www.cms.gov/medicare/payment/fee-schedules/clinical-laboratory-fee-schedule-clfs/files/26clabq3",
+      "sha256": "3abf41e0c97068c8551055591db21d806fe20aa409eec9278e8e24891d463f1f",
+      "data_file": "PUF_CLFS_CY2026_Q3V1.csv"
+    },
+    {
+      "id": "26CLABQ2",
+      "kind": "clfs",
+      "effective_start": "2026-04-01",
+      "title": "Medicare Clinical Laboratory Fee Schedule 26CLABQ2",
+      "url": "https://www.cms.gov/files/zip/26clabq2.zip",
+      "landing_url": "https://www.cms.gov/medicare/payment/fee-schedules/clinical-laboratory-fee-schedule-clfs/files/26clabq2",
+      "sha256": "b5a448c35c0756178156fb7182731800e0f4c261d083f0f816375e142883671e",
+      "data_file": "PUF_CLFS_CY2026_Q2V1.csv"
+    },
+    {
+      "id": "26CLABQ1",
+      "kind": "clfs",
+      "effective_start": "2026-01-01",
+      "title": "Medicare Clinical Laboratory Fee Schedule 26CLABQ1",
+      "url": "https://www.cms.gov/files/zip/26clabq1.zip",
+      "landing_url": "https://www.cms.gov/medicare/payment/fee-schedules/clinical-laboratory-fee-schedule-clfs/files/26clabq1",
+      "sha256": "c2bd6922117d5db506cd8405423d2afce48781d93e81bcbcc93c4a4f12a76e29",
+      "data_file": "CLFS 2026 Q1V1.csv"
+    },
+    {
+      "id": "25CLABQ4",
+      "kind": "clfs",
+      "effective_start": "2025-10-01",
+      "title": "Medicare Clinical Laboratory Fee Schedule 25CLABQ4",
+      "url": "https://www.cms.gov/files/zip/25clabq4.zip",
+      "landing_url": "https://www.cms.gov/medicare/payment/fee-schedules/clinical-laboratory-fee-schedule-clfs/files/25clabq4",
+      "sha256": "5a17e6a714f303a97f9b7bd705d73d28bda17e2bc0b5e5ec3fb1bf73eeaf53e9",
+      "data_file": "CLFS 2025 Q4V1.csv"
+    },
+    {
+      "id": "25CLABQ3V2",
+      "kind": "clfs",
+      "effective_start": "2025-07-01",
+      "title": "Medicare Clinical Laboratory Fee Schedule 25CLABQ3V2",
+      "url": "https://www.cms.gov/files/zip/25clabq3v2.zip",
+      "landing_url": "https://www.cms.gov/medicare/payment/fee-schedules/clinical-laboratory-fee-schedule-clfs/files/25clabq3",
+      "sha256": "5a3a4dfbdc37aa29d47396f36b0da46eb20f4063ce2efed925b73dfe55625799",
+      "data_file": "CLFS 2025 Q3V2.csv"
+    },
+    {
+      "id": "25CLABQ2",
+      "kind": "clfs",
+      "effective_start": "2025-04-01",
+      "title": "Medicare Clinical Laboratory Fee Schedule 25CLABQ2",
+      "url": "https://www.cms.gov/files/zip/25clabq2.zip",
+      "landing_url": "https://www.cms.gov/medicare/payment/fee-schedules/clinical-laboratory-fee-schedule-clfs/files/25clabq2",
+      "sha256": "d64b505154aa9bdf2aec015cf8cd3f9c56f9ae3bdfdd631dd445ce26dff8a5e5",
+      "data_file": "CLFS 2025 Q2V1.csv"
+    }
+  ]
+}

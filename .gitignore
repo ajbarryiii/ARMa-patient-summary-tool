@@ -1,0 +1,23 @@
+# Dependencies and build outputs
+node_modules/
+utilities/redact-desktop/dist/
+*.exe
+*.dmg
+.DS_Store
+__pycache__/
+*.py[cod]
+
+# Private workspaces, credentials, and runtime data
+.arm-data/
+unredacted/
+redacted/
+workspaces/
+.env
+.env.*
+auth.json
+*.pem
+*.key
+
+# Local development artifacts
+plans/
+*_PLAN.md
